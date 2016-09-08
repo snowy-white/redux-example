@@ -58,6 +58,22 @@ body{
     color: white;
 }
 
+.load{
+    position: relative;
+    width: 60px;
+    background-color:white;
+    border:1px solid #a1a1a1;
+    border-radius:10px;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.load:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
 .filter{
     padding-left: 30px;
     color: indigo;

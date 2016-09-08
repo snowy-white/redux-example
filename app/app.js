@@ -3,9 +3,9 @@ import {render} from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import Todo from './component/Todo';
-import taskHandler from './redux/reducers';
+import {configureStore} from './redux/middleware';
 
-let store = createStore(taskHandler);
+let store = configureStore();
 render(
     <Provider store={store}>
         <Todo/>
