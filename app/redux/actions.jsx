@@ -4,6 +4,7 @@ export const COMPLETE_TASK = 'COMPLETE_TASK';
 export const DELETE_TASK = 'DELETE_TASK';
 export const SET_FILTER_TYPE = 'SET_FILTER_TYPE';
 export const LOAD_TASK = 'LOAD_TASK';
+export const CLEAR_TASK = 'CLEAR_TASK';
 
 export const FilterType = {
     SHOW_ALL: 'SHOW_ALL',
@@ -16,6 +17,7 @@ export const completeTask = (index) => ({ type: COMPLETE_TASK, index });
 export const deleteTask = (index) => ({ type: DELETE_TASK, index });
 export const setFilterType = (filter) => ({ type: SET_FILTER_TYPE, filter });
 export const loadTask = (data) => ({ type: LOAD_TASK, data });
+export const clearTask = () => ({ type: CLEAR_TASK });
 const uri = "/app/file";
 export const requestTask = () => (dispatch) => (
     $.ajax({
@@ -28,6 +30,7 @@ export const requestTask = () => (dispatch) => (
         }.bind(this)
     })
 );
+
 export const receiveTask = (text) => {
     let task = {
         text,
@@ -45,6 +48,22 @@ export const receiveTask = (text) => {
     });
 };
 
+export const removeAllTask = () =>(dispatch) =>{
+    let task = {
+        text:'',
+        completed: false
+    };
+    return $.ajax({
+        type: 'POST',
+        url: uri,
+        dataType: 'json',
+        data: task,
+        success: () => Promise.resolve(dispatch(clearTask())).then(() => (alert("clear tasks success!"))),
+        error: function (xhr, status, err) {
+            console.log(uri, status, err.toString());
+        }.bind(this)
+    });
+};
 export const updateTask = (index) => {
     let idx = { index };
     return $.ajax({

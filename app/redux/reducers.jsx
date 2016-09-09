@@ -40,6 +40,8 @@ const handleTask = (tasks = [], action) => {
                 ...tasks,
                 ...action.data
             ];
+        case actionType.CLEAR_TASK:
+            return [];
         default:
             return tasks;
     }

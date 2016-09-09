@@ -6,7 +6,7 @@
   "license": "",
   "repository": {},
   "scripts": {
-    "start": "node server.js",
+    "start": "webpack && node server.js",
     "starts": "webpack-dev-server",
     "build": "webpack --display-error-details"
   },
