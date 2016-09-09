@@ -11,4 +11,8 @@ class TodoLoad extends Component {
     }
 }
 
+TodoLoad.propTypes = {
+    handleLoad: PropTypes.func.isRequired
+};
+
 export default TodoLoad;
