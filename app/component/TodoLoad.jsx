@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 
 class TodoLoad extends Component {
     render() {
         return (
             <div>
-            <button className="load" onClick={this.props.handleLoad}>load
-            </button>
+                <button className="load" onClick={this.props.handleLoad}>load
+                </button>
             </div>
         );
     }
