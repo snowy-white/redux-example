@@ -35,6 +35,11 @@ const handleTask = (tasks = [], action) => {
                 ...tasks.slice(0, action.index),
                 ...tasks.slice(action.index + 1)
             ];
+        case actionType.LOAD_TASK:
+            return [
+                ...tasks,
+                ...action.data
+            ];
         default:
             return tasks;
     }

@@ -13,9 +13,9 @@ class TodoForm extends Component {
     render() {
         var value = this.state.value;
         return (
-            <div>
+            <div >
                 <form onSubmit={this.handleAdd.bind(this) }>
-                    <input type="text" ref="inputnew" id="todo-new" placeholder="typing a newthing todo"
+                    <input type="text" name="text" ref="inputnew" id="todo-new" placeholder="typing a newthing todo"
                         value={value} onChange={this.handleChangeValue.bind(this) }/>
                 </form>
             </div>
